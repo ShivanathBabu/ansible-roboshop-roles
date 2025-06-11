@@ -5,7 +5,8 @@
 
 - name: maven setup
   include_role:
-  tasks_from: maven
+    name: common
+    tasks_from: maven
 
 - name: import data
   tags:
@@ -26,4 +27,3 @@
   include_role:
     name: common
     tasks_from: maven
-    
