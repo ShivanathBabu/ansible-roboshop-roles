@@ -1,9 +1,9 @@
-- name: copy mongo repo
+- name: copy mongodb repo
   ansible.builtin.copy:
     src: mongo.repo
     dest: /etc/yum.repos.d/mongo.repo
 
-- name: Install Mongodb server
+- name: Install mongodb server
   ansible.builtin.dnf:
     name: mongodb-org
     state: present
@@ -14,7 +14,7 @@
     state: started
     enabled: yes
 
-- name: allow remote connection
+- name: allow remote connections
   ansible.builtin.replace:
     path: /etc/mongod.conf
     regexp: '127.0.0.1'
