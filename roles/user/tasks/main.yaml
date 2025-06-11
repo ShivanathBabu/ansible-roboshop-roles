@@ -10,5 +10,5 @@
 
 - name: systemd setup
   include_role:
-    name: coomon
+    name: common  
     tasks_from: systemd.yaml
