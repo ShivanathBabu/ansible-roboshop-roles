@@ -20,5 +20,11 @@
 - name: setup root password
   ansible.builtin.command: mysql_secure_installation --set-root-pass {{ MYSQL_ROOT_PASSWORD }}
 
+- name: password check
+  tags:
+  - vars
+  import_role:
+  name: mysql
+  tasks_from: vars
 
 
