@@ -1,9 +1,11 @@
 - name: stop service
+  tags:
+  - deployement
   ansible.builtin.service:
     name: "{{ component }}"
     state: stopped
 
-- name: create directory
+- name: remove directory
   ansible.bultin.file:
     state: absent
     path: /app
@@ -26,5 +28,5 @@
   ansible.builtin.service:
   - name: "{{ component }}"
     state: restart
-    
+
 
