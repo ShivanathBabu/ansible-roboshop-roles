@@ -1,8 +1,3 @@
-- name: app setup
-  include_role: 
-    name: common
-    tasks_from: apps-setup
-
 - name: nodejs setup
   include_role:
     name: common
@@ -21,16 +16,29 @@
 - name: check products loaded or not
   ansible.builtin.command: mongosh --host mongo.blackweb.agency --eval 'db.getMongo().getDBNames().indexOf("catalogue")'
   register: catalogue_output
+  ignore_errors: true
+  ignore_unreachable: true
 
 - name: print catalogue catalogue output
   ansible.builtin.debug:
     msg: "{{catalogue_output}}"
+  ignore_errors: true
+  ignore_unreachable: true
 
 - name: load products
   ansible.builtin.shell: mongosh --host mongo.blackweb.agency < /app/db/master-data.js
   when: catalogue_output.stdout | int < 0
+  ignore_errors: true
+  ignore_unreachable: true
     
 - name: systemd setup
   include_role:
     name: common
     tasks_from: systemd.yaml
+
+- name: app setup
+  tags:
+  - deployement
+  include_role:
+    name: common
+    tasks_from: deployement.yaml
