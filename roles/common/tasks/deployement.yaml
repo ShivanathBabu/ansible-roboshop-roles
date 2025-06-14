@@ -24,7 +24,7 @@
   community.general.npm:
     path: /app
 
-- name: restart {{ component }}
+- name: restart "{{ component }}""
   ansible.builtin.service:
   - name: "{{ component }}"
     state: restart
