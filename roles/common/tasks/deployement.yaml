@@ -6,7 +6,7 @@
     state: stopped
 
 - name: remove directory
-  ansible.bultin.file:
+  ansible.builtin.file:
     state: absent
     path: /app
 
