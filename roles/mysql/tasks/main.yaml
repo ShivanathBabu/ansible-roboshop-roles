@@ -24,7 +24,7 @@
   tags:
   - vars
   import_role:
-  name: mysql
-  tasks_from: vars
+    name: mysql
+    tasks_from: vars
 
 
