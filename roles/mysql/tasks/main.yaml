@@ -22,9 +22,9 @@
 
 - name: password check
   tags:
-  - vars
+  - password
   import_role:
-    name: mysql
-    tasks_from: vars
+    name: vars
+    tasks_from: main.yaml
 
 
