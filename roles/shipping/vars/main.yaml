@@ -1,4 +1,4 @@
 MYSQL_ROOT_USER: root
-MYSQL_ROOT_PASSWORD: roboshop@1
+MYSQL_ROOT_PASSWORD: Roboshop@1
 MYSQL_HOST: mysql-{{ env }}.blackweb.agency
 CART_HOST: cart.backend-{{ env }}.blackweb.agency
