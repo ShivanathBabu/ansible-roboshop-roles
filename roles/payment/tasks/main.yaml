@@ -6,10 +6,10 @@
 - name: phython setup
   include_role:
     name: common
-    tasks_from: python.yaml
+    tasks_from: python
 
 - name: systemd setup
   include_role:
     name: common
-    tasks_from: systemd.yaml
+    tasks_from: systemd
     
